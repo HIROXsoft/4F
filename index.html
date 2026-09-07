@@ -277,12 +277,17 @@
       .legend { gap: 5px; }
       .legend span { font-size: clamp(.66rem, .95vh, .82rem); }
       .legend i { width: 9px; height: 9px; }
+      /* 4F図面は元画像(897 x 836)の縦横比を維持。
+         高さを優先して1画面内に最大表示し、余った横幅は余白にする。 */
       .map-wrap {
         flex: 1 1 auto;
         min-height: 0;
-        width: 100%;
-        height: auto;
-        aspect-ratio: auto;
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        aspect-ratio: 897 / 836;
+        align-self: center;
+        margin: 0 auto;
       }
       .floor-img {
         width: 100%;
